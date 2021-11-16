@@ -1,5 +1,5 @@
 @import "reset";
-
+@import "grid";
 
 *,*::before,*::after {
     box-sizing: border-box;
@@ -9,11 +9,18 @@ body {
 	height: 100vh;
 }
 .container {
-	width: 500px;
+	max-width: 35%;
 	height: 600px;
 	margin: 50px auto;
 	background-color: #fff;
+	@include pad {
+		max-width: 50%;
+	}
+	@include mobile {
+		max-width: 85%;
+	}
 }
+
 
 .banner {
 	background-image: url(https://images.unsplash.com/photo-1498464619740-386503e7e7f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1782&q=80);
@@ -79,3 +86,4 @@ body {
 		}
 	}
 }
+
