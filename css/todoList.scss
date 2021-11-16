@@ -10,8 +10,9 @@ body {
 }
 .container {
 	width: 500px;
-	height: 500px;
+	height: 600px;
 	margin: 50px auto;
+	background-color: #fff;
 }
 
 .banner {
@@ -32,7 +33,6 @@ body {
 }
 
 .content {
-	background-color: #fff;
 	padding: 10px 50px ;
 	.addArea {
 		display: flex;
@@ -46,8 +46,9 @@ body {
 			background: transparent;
 		}
 		input[type=text] {
-			font-size: 20px;
-			font-weight: bold;
+			font-size: 18px;
+			font-weight: 700;
+			color: rgb(79, 109, 99);
 			width: 100%;
 			&:focus {
 				outline: none;
@@ -73,6 +74,8 @@ body {
 			color: rgb(68, 92, 84);
 			
 		}
-		
+		.item-title {
+			color: rgb(68, 92, 84);
+		}
 	}
 }
