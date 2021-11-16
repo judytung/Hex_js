@@ -1,0 +1,140 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#e0f3ef), to(rgba(8, 120, 139, 0.747)));
+  background: linear-gradient(to right, #e0f3ef, rgba(8, 120, 139, 0.747));
+  height: 100vh;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  margin: 50px auto;
+}
+
+.banner {
+  background-image: url(https://images.unsplash.com/photo-1498464619740-386503e7e7f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1782&q=80);
+  background-size: cover;
+  height: 300px;
+  position: relative;
+}
+
+.banner-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 44px;
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+
+.content {
+  background-color: #fff;
+  padding: 10px 50px;
+}
+
+.content .addArea {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-bottom: 1px solid #445c54;
+  margin-bottom: 20px;
+}
+
+.content .addArea .addText {
+  border: none;
+}
+
+.content .addArea > * {
+  background: transparent;
+}
+
+.content .addArea input[type=text] {
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.content .addArea input[type=text]:focus {
+  outline: none;
+}
+
+.content .addArea .addIcon {
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+.list-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.list-item .deleteIcon {
+  color: #445c54;
+}
+/*# sourceMappingURL=todoList.css.map */

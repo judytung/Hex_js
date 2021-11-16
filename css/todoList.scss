@@ -1,0 +1,78 @@
+@import "reset";
+
+
+*,*::before,*::after {
+    box-sizing: border-box;
+}
+body {
+	background: linear-gradient(to right,rgb(224, 243, 239),rgba(8, 120, 139, 0.747));
+	height: 100vh;
+}
+.container {
+	width: 500px;
+	height: 500px;
+	margin: 50px auto;
+}
+
+.banner {
+	background-image: url(https://images.unsplash.com/photo-1498464619740-386503e7e7f5?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1782&q=80);
+	background-size: cover;
+	height: 300px;
+	position: relative;
+	&-title {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		font-size: 44px;
+		color: #fff;
+		font-weight: bold;
+		letter-spacing: 5px;
+	}
+}
+
+.content {
+	background-color: #fff;
+	padding: 10px 50px ;
+	.addArea {
+		display: flex;
+		justify-content: space-between;
+		border-bottom:1px solid rgb(68, 92, 84);
+		margin-bottom: 20px;
+		.addText {
+			border:none;
+		}
+		>* {
+			background: transparent;
+		}
+		input[type=text] {
+			font-size: 20px;
+			font-weight: bold;
+			width: 100%;
+			&:focus {
+				outline: none;
+			}
+		}
+		.addIcon {
+			font-size: 20px;
+			font-weight: bold;
+			color: #000;
+		}
+	}
+	
+	
+}
+
+.list{
+		
+	&-item {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 10px;
+		.deleteIcon {
+			color: rgb(68, 92, 84);
+			
+		}
+		
+	}
+}
