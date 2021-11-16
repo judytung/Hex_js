@@ -12,11 +12,11 @@ let data = [
 // 並用一個函式 renderData() 將此包起來，作為資料初始化的渲染，每次跑這個函式就會渲染出 data 裏面的東西
 function renderData() {
     let str = '';
-    data.forEach(function (item) {
+    data.forEach(function (item,index) {
         str += `<li class="list-item">
         <h2 class="item-title">${item.content}</h2>
         <a href="#">
-            <span class="material-icons-outlined deleteIcon">
+            <span class="material-icons-outlined deleteIcon" data-index="${index}">
                 delete_outline
                 </span>
         </a>
@@ -44,4 +44,20 @@ addBtn.addEventListener('click', function (e) {
     data.push(dataItem); // 將值加入到 data 裏面
     renderData();
     addTxt.value = '';
+})
+
+
+// 刪除事件功能，對整個列表做監聽
+list.addEventListener('click', function (e) {
+    e.preventDefault();
+    // console.log(e.target);
+    // 點到按鈕以外的就中斷函式
+    if (e.target.nodeName !== 'SPAN') {
+        return;
+    }
+    // 宣告 num 為資料的索引值
+    let num = e.target.getAttribute('data-index');
+    // console.log(num)
+    data.splice(num,1);
+    renderData();
 })
