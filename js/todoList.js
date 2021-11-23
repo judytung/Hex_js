@@ -3,6 +3,7 @@ const addTxt = document.querySelector('.addText');
 const addBtn = document.querySelector('.addBtn');
 const tab = document.querySelector('.tab');
 const list = document.querySelector('.list');
+const cleanBtn = document.querySelector('#clean');
 let data = JSON.parse(localStorage.getItem('listData')) || [];
 
 // 1. 新增
@@ -109,9 +110,17 @@ function updateList () {
     const ingNum = document.getElementById('ingId');
     // 計算待完成的陣列長度
     let ingLen = data.filter((item) => item.checked === '');
-    ingNum.txt = ingLen.length;
+    ingNum.textContent = ingLen.length;
     render(showData);
 }
+
 updateList(); // 初始化頁面
 
+// 6. 刪除已完成
 
+cleanBtn.addEventListener('click', clean);
+function clean (e) {
+    e.preventDefault;
+    data = data.filter((item) => item.checked === '');
+    updateList();
+}
