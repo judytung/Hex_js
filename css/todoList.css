@@ -97,44 +97,61 @@ body {
   letter-spacing: 5px;
 }
 
-.content {
+.formContent {
   padding: 10px 50px;
+  background-color: #d7e5e6;
+  opacity: .5;
 }
 
-.content .addArea {
+.formContent .addArea {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-bottom: 1px solid #445c54;
-  margin-bottom: 20px;
 }
 
-.content .addArea .addText {
+.formContent .addArea .addText {
   border: none;
 }
 
-.content .addArea > * {
+.formContent .addArea > * {
   background: transparent;
 }
 
-.content .addArea input[type=text] {
+.formContent .addArea input[type=text] {
   font-size: 18px;
   font-weight: 700;
-  color: #4f6d63;
+  color: #22332d;
   width: 100%;
 }
 
-.content .addArea input[type=text]:focus {
+.formContent .addArea input[type=text]:focus {
   outline: none;
 }
 
-.content .addArea .addIcon {
+.formContent .addArea .addIcon {
   font-size: 20px;
   font-weight: bold;
   color: #000;
+}
+
+.tab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+}
+
+.tab li {
+  padding: 16px;
+  width: 100%;
+  border-bottom: 2px solid #efefef;
+}
+
+.tab li.active {
+  border-bottom: 2px solid #11272c;
 }
 
 .list-item {
@@ -153,5 +170,11 @@ body {
 
 .list-item .item-title {
   color: #445c54;
+}
+
+.list-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=todoList.css.map */

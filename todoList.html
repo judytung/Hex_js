@@ -13,40 +13,49 @@
         <div class="banner">
             <h1 class="banner-title">TRAVEL</h1>
         </div>
-        <div class="content">
+        <div class="formContent">
             <form class="addArea">
                 <input type="text" name="add" placeholder="Add Item ..." class="addText">
                 <a href="" class="addBtn"><span class="material-icons-outlined addIcon">
                     add
                     </span></a>
             </form>
-            <ul class="list">
-                <!-- <li class="list-item">
-                    <h2 class="item-title">標題一</h2>
-                    <a href="#">
-                        <span class="material-icons-outlined deleteIcon">
-                            delete_outline
-                            </span>
-                    </a>
-                </li>
-                <li class="list-item">
-                    <h2>標題二</h2>
-                    <a href="#">
-                        <span class="material-icons-outlined deleteIcon">
-                            delete_outline
-                            </span>
-                    </a>
-                </li>
-                <li class="list-item">
-                    <h2>標題三</h2>
-                    <a href="#">
-                        <span class="material-icons-outlined deleteIcon">
-                            delete_outline
-                            </span>
-                    </a>
-                </li> -->
-            </ul>
         </div>
+        <ul class="tab">
+            <li class="active" data-tab="all">全部</li>
+            <li data-tab="ing">待完成</li>
+            <li data-tab="done">已完成</li>
+        </ul>
+        <ul class="list">
+            <!-- <li class="list-item">
+                <h2 class="item-title">標題一</h2>
+                <a href="#">
+                    <span class="material-icons-outlined deleteIcon">
+                        delete_outline
+                        </span>
+                </a>
+            </li>
+            <li class="list-item">
+                <h2>標題二</h2>
+                <a href="#">
+                    <span class="material-icons-outlined deleteIcon">
+                        delete_outline
+                        </span>
+                </a>
+            </li>
+            <li class="list-item">
+                <h2>標題三</h2>
+                <a href="#">
+                    <span class="material-icons-outlined deleteIcon">
+                        delete_outline
+                        </span>
+                </a>
+            </li> -->
+        </ul>
+        <div class="list-footer">
+            <p><span id="ingId"></span>個待完成項目</p>
+            <a href="#" id="clean">清除已完成項目</a>
+          </div>
     </div>
     <script src="./js/todoList.js"></script>
 </body>
