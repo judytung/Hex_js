@@ -24,7 +24,8 @@ function addData (e) {
         addTxt.value = '';
     }
     localStorage.setItem('listData',JSON.stringify(data));
-    render(data); // 渲染畫面
+    // render(data); // 渲染畫面
+    updateList();
 }
 
 // 2. 渲染
@@ -63,9 +64,10 @@ function changeTab (e) {
     });
     // 點擊就新增 active 的樣式
     e.target.classList.add('active');
+    updateList();
 }
 
-// 刪除 & 切換 checked 狀態
+// 4. 刪除 & 切換 checked 狀態
 list.addEventListener('click', delData);
 function delData (e) {
     //透過 closest 的方式能找出點擊到的 li 標籤
@@ -87,8 +89,29 @@ function delData (e) {
         });
     }
     localStorage.setItem('listData',JSON.stringify(data));
-    render(data);
+    // render(data);
+    updateList();
 }
 
+
+// 5. 更新待辦清單，切換 tab 時顯示的畫面資料
+function updateList () {
+    let showData = [];
+    // 利用 toggleStatus 的狀態來判斷
+    if (toggleStatus === 'all') {
+        showData = data;
+    } else if (toggleStatus === 'ing') {
+        showData = data.filter((item) => item.checked === '');
+    } else {
+        showData = data.filter((item) => item.checked === 'checked');
+    }
+    // 計算待完成項目
+    const ingNum = document.getElementById('ingId');
+    // 計算待完成的陣列長度
+    let ingLen = data.filter((item) => item.checked === '');
+    ingNum.txt = ingLen.length;
+    render(showData);
+}
+updateList(); // 初始化頁面
 
 
