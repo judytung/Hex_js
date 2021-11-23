@@ -124,3 +124,11 @@ function clean (e) {
     data = data.filter((item) => item.checked === '');
     updateList();
 }
+
+// 優化 enter 鍵能直接新增
+
+addTxt.addEventListener('keyup', function (e) {
+    if (e.key === 'Enter') {
+        addData();
+    }
+});
