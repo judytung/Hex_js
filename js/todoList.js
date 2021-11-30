@@ -52,17 +52,16 @@ function render (arr) {
 // 3. tab 切換（css 樣式)
 // 全域時的狀態
 let toggleStatus = "all";
-
+const tabItem = document.querySelectorAll('.tab li');
 // 監聽整個 tab 
 tab.addEventListener('click',changeTab);
 function changeTab (e) {
-    // console.log(e.target.dataset.tab) // 跑出 all / ing / done
     toggleStatus = e.target.dataset.tab;
-    const tabItem = document.querySelectorAll('.tab li');
     // 先移除所有 tabItem active 的樣式
     tabItem.forEach(item => {
         item.classList.remove('active');
     });
+    
     // 點擊就新增 active 的樣式
     e.target.classList.add('active');
     updateList();
@@ -123,6 +122,7 @@ function clean (e) {
     e.preventDefault;
     data = data.filter((item) => item.checked === '');
     updateList();
+    
 }
 
 // 優化 enter 鍵能直接新增
