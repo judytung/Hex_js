@@ -27,7 +27,9 @@ function addData (e) {
     }
     localStorage.setItem('listData',JSON.stringify(data));
     // render(data); // 渲染畫面
-    updateList();
+    // updateList();
+    allTab = true;
+    changeTab();
 }
 
 // 2. 渲染
@@ -53,20 +55,39 @@ function render (arr) {
 // 3. tab 切換（css 樣式)
 // 全域時的狀態
 let toggleStatus = "all";
+let allTab = false;
 const tabItem = document.querySelectorAll('.tab li');
-// 監聽整個 tab 
-tab.addEventListener('click',changeTab);
-function changeTab (e) {
-    toggleStatus = e.target.dataset.tab;
-    // 先移除所有 tabItem active 的樣式
+const allStatus = document.getElementById('allStatus');
+const changeTab = (e) => {
     tabItem.forEach(item => {
         item.classList.remove('active');
     });
-    
-    // 點擊就新增 active 的樣式
-    e.target.classList.add('active');
+    if (allTab) {
+        toggleStatus = 'all';
+        allStatus.classList.add('active');
+        allTab = false;
+    } else {
+        toggleStatus = e.target.getAttribute("data-tab");
+        // console.log(toggleStatus);
+        e.target.classList.add("active");
+    }
     updateList();
 }
+// 監聽整個 tab 
+tab.addEventListener('click',changeTab);
+
+
+// function changeTab (e) {
+//     toggleStatus = e.target.dataset.tab;
+//     // 先移除所有 tabItem active 的樣式
+//     tabItem.forEach(item => {
+//         item.classList.remove('active');
+//     });
+    
+//     // 點擊就新增 active 的樣式
+//     e.target.classList.add('active');
+//     updateList();
+// }
 
 // 4. 刪除 & 切換 checked 狀態
 list.addEventListener('click', delData);
@@ -123,7 +144,9 @@ function clean (e) {
     e.preventDefault();
     data = data.filter((item) => item.checked === '');
     localStorage.setItem('listData',JSON.stringify(data));
-    updateList();
+    allTab = true;
+    changeTab();
+    // updateList();
     
 }
 
