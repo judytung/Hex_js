@@ -11,6 +11,7 @@ let data = JSON.parse(localStorage.getItem('listData')) || [];
 addBtn.addEventListener('click', addData);
 // 新增的函式
 function addData (e) {
+    // e.preventDefault();
     // 宣告一個物件，每一筆我們新增的資料就是此物件
     let todo = {
         txt: addTxt.value,  // 輸入欄位的值
@@ -119,15 +120,17 @@ updateList(); // 初始化頁面
 
 cleanBtn.addEventListener('click', clean);
 function clean (e) {
-    e.preventDefault;
+    e.preventDefault();
     data = data.filter((item) => item.checked === '');
+    localStorage.setItem('listData',JSON.stringify(data));
     updateList();
     
 }
 
 // 優化 enter 鍵能直接新增
 
-addTxt.addEventListener('keyup', function (e) {
+addTxt.addEventListener('keypress', function (e) {
+    // e.preventDefault();
     if (e.key === 'Enter') {
         addData();
     }
